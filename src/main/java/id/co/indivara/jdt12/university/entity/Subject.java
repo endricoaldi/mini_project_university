@@ -24,14 +24,4 @@ public class Subject {
 
     @Column(name = "nama_subject", nullable = false)
     private String namaSubject;
-
-//    @OneToMany(mappedBy = "subject")
-//    @JsonIgnore
-//    private List<Classroom> classrooms;
-
-//    public Subject(String namaSubject) {
-//        this.idSubject = 0;
-//        this.namaSubject = namaSubject;
-//    }
-
 }

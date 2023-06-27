@@ -4,6 +4,7 @@ package id.co.indivara.jdt12.university.controller;
 import id.co.indivara.jdt12.university.entity.Lecturer;
 import id.co.indivara.jdt12.university.exception.CanNotFindException;
 
+import id.co.indivara.jdt12.university.exception.Message;
 import id.co.indivara.jdt12.university.service.LecturerService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -33,26 +34,15 @@ public class LecturerController {
     Lecturer findLecturerById(@PathVariable ("idLecturer") Integer idLecturer){
         return lecturerService.findById(idLecturer);
     }
-//    @GetMapping("/find/by/{nip}")
-//    public ResponseEntity<Lecturer> getLecturerByNip(@PathVariable("nip") Integer nip){
-//        Lecturer lect = lecturerRepository.findByNip(nip);
-//        if (lect == null){
-//            throw new RuntimeException("NIP tidak ditemukan");
-//        }
-//        return new ResponseEntity<>(lect,HttpStatus.OK);
-//    }
+
     @PutMapping("/update/{idLecturer}")
     Lecturer updateLecturer(@RequestBody Lecturer lecturer, @PathVariable("idLecturer") Integer idLecturer){
         return lecturerService.updateLecturer(lecturer, idLecturer);
     }
     @DeleteMapping("/delete/{idLecturer}")
-    public String  deleteLecturerById(@PathVariable ("idLecturer") Integer idLecturer){
+    public Message deleteLecturerById(@PathVariable ("idLecturer") Integer idLecturer){
         lecturerService.deleteLecturerById(idLecturer);
-        return "Delete Sukses...";
+        return new Message(200,"Lecturer Berhasil Dihapus") ;
     }
-//    @DeleteMapping("/delete")
-//    public ResponseEntity<HttpStatus> deleteAllLecturer(){
-//        lecturerRepository.deleteAll();
-//        return new ResponseEntity<>(HttpStatus.OK);
-//    }
+
 }

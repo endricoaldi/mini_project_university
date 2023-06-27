@@ -39,22 +39,5 @@ public class Lecturer {
     @NotNull (message = "Email Kelamin Tidak Boleh Kosong")
     @Column (name = "email", nullable = false)
     private String email;
-
-//    @ManyToMany
-//    @JoinTable(
-//            name = "classroom",
-//            joinColumns = @JoinColumn(name = "id_lecturer"),
-//            inverseJoinColumns = @JoinColumn(name = "id_classroom")
-//    )
-//    @JsonIgnore
-//    private List<Classroom> assignedLecturer;
-//
-//    public Lecturer(Integer nip, String nama, String jenisKelamin, String email) {
-//        this.idLecturer= 0;
-//        this.nip = nip;
-//        this.nama = nama;
-//        this.jenisKelamin = jenisKelamin;
-//        this.email = email;
-//    }
 }
 

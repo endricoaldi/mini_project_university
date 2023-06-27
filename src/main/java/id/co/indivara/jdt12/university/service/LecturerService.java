@@ -1,6 +1,7 @@
 package id.co.indivara.jdt12.university.service;
 
 import id.co.indivara.jdt12.university.entity.Lecturer;
+import id.co.indivara.jdt12.university.exception.Message;
 
 
 import java.util.List;
@@ -15,5 +16,5 @@ public interface LecturerService {
     //PUT : /lecturer/{idLecturer}
     Lecturer updateLecturer(Lecturer lecturer, Integer idLecturer);
     //DELETE : /lecturer/{idLecturer}
-    void deleteLecturerById(Integer idLecturer);
+    Message deleteLecturerById(Integer idLecturer);
 }

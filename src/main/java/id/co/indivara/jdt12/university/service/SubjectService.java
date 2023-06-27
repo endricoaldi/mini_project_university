@@ -2,6 +2,7 @@ package id.co.indivara.jdt12.university.service;
 
 
 import id.co.indivara.jdt12.university.entity.Subject;
+import id.co.indivara.jdt12.university.exception.Message;
 
 import java.util.List;
 
@@ -15,5 +16,5 @@ public interface SubjectService {
     //PUT : /subject/{idSubject}
     Subject updateSubject(Subject subject, Integer idSubject);
     //DELETE : /subject/{idSubject}
-    void deleteSubjectById(Integer idSubject);
+    Message deleteSubjectById(Integer idSubject);
 }

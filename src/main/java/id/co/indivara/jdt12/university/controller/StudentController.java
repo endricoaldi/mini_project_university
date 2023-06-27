@@ -3,6 +3,7 @@ package id.co.indivara.jdt12.university.controller;
 
 import id.co.indivara.jdt12.university.entity.Student;
 
+import id.co.indivara.jdt12.university.exception.Message;
 import id.co.indivara.jdt12.university.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -38,8 +39,8 @@ public class StudentController {
     }
 
     @DeleteMapping("/delete/{idStudent}")
-    public String deleteStudent(@PathVariable("idStudent") Integer idStudent){
+    public Message deleteStudent(@PathVariable("idStudent") Integer idStudent){
         studentService.deleteStudentById(idStudent);
-        return "Delete Sukses...";
+        return new Message(200,"Student Berhasil Dihapus") ;
     }
 }

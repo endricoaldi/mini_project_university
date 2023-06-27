@@ -1,6 +1,7 @@
 package id.co.indivara.jdt12.university.controller;
 
 import id.co.indivara.jdt12.university.entity.Classroom;
+import id.co.indivara.jdt12.university.exception.Message;
 import id.co.indivara.jdt12.university.service.ClassroomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,8 +31,8 @@ public class ClassroomController {
         return classroomService.updateClass(classroom, idClass);
     }
     @DeleteMapping("/delete/{idClass}")
-    public String deleteClass(@PathVariable("idClass") Integer idClass){
+    public Message deleteClass(@PathVariable("idClass") Integer idClass){
         classroomService.deleteClassById(idClass);
-        return "Delete Sukses...";
+        return new Message(200,"Classroom Berhasil Dihapus") ;
     }
 }

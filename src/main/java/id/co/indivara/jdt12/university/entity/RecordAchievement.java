@@ -60,7 +60,4 @@ public class RecordAchievement {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Subject subject;
 
-//    @OneToOne(cascade = CascadeType.REMOVE)
-//    @JsonIgnore
-//    private Student student;
 }

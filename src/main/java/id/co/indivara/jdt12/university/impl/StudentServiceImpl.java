@@ -3,10 +3,13 @@ package id.co.indivara.jdt12.university.impl;
 
 import id.co.indivara.jdt12.university.entity.Student;
 import id.co.indivara.jdt12.university.exception.CanNotFindException;
+import id.co.indivara.jdt12.university.exception.Message;
 import id.co.indivara.jdt12.university.repo.StudentRepository;
 import id.co.indivara.jdt12.university.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Objects;
@@ -54,7 +57,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void deleteStudentById(Integer idStudent){
+    public Message deleteStudentById(Integer idStudent){
+        Student student = studentRepository.findById(idStudent)
+                .orElseThrow(()->new ResponseStatusException(HttpStatus.BAD_REQUEST,"ID Tidak Ditemukan"));
+
         studentRepository.deleteById(idStudent);
+        return new Message(200,"Student Berhasil Dihapus");
+
     }
 }

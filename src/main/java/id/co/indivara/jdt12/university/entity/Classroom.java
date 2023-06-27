@@ -25,34 +25,15 @@ public class Classroom {
     @Column(name = "id_classroom")
     private Integer idClassroom;
 
-//    @ManyToOne(targetEntity = Lecturer.class, cascade = CascadeType.REMOVE)
-//    @JsonIgnore
-//    @Column(name = "id_lecturer", nullable = false)
-//    private Integer idLecturer;
-
-//    @ManyToOne(cascade = CascadeType.REMOVE)
-//    @JsonIgnore
-//    @Column (name = "id_subject")
-//    private Subject idSubject;
-
     @Column (name = "period")
     private String period;
 
-//    @JoinColumn(name = "id_lecturer")
-//    @ManyToOne(targetEntity = Lecturer.class)
-//    @OnDelete(action = OnDeleteAction.CASCADE)
     @Column(name = "id_lecturer")
     private Integer idLecturer;
 
-//    @JoinColumn(name = "id_subject")
-//    @ManyToOne(targetEntity = Subject.class)
-//    @OnDelete(action = OnDeleteAction.CASCADE)
     @Column(name = "id_subject")
     private Integer idSubject;
 
-//    @ManyToMany(mappedBy = "assignedLecturer")
-//    @JsonIgnore
-//    private List<Lecturer> lecturers;
     @JoinColumn(name = "id_lecturer",insertable = false,updatable = false)
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)

@@ -44,24 +44,5 @@ public class Student {
     @Column(name = "tahun_masuk", nullable = false)
     private Integer tahunMasuk;
 
-//    @OneToOne (mappedBy = "student")
-//    @JsonIgnore
-//    private List<RecordAchievement> recordAchievements;
 
-//    @OneToOne(mappedBy = "student")
-//    @JsonIgnore
-//    private RecordAchievement recordAchievement;
-
-//    @ManyToMany
-//    @JsonIgnore
-//    private List<RecordAchievement> enrolledSubjects;
-//
-//    public Student(Integer nim, String nama, String jenisKelamin, String email, Integer tahunMasuk) {
-//        this.idStudent = 0;
-//        this.nim = nim;
-//        this.nama = nama;
-//        this.jenisKelamin = jenisKelamin;
-//        this.email = email;
-//        this.tahunMasuk = tahunMasuk;
-//    }
 }

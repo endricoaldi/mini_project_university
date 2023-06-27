@@ -4,6 +4,7 @@ package id.co.indivara.jdt12.university.service;
 
 
 import id.co.indivara.jdt12.university.entity.Classroom;
+import id.co.indivara.jdt12.university.exception.Message;
 
 import java.util.List;
 
@@ -18,5 +19,5 @@ public interface ClassroomService {
     //PUT : /class/{idClassroom}
     Classroom updateClass(Classroom classroom, Integer idClassroom);
     //DELETE : /class/{idClass}
-    void deleteClassById(Integer idClass);
+    Message deleteClassById(Integer idClass);
 }

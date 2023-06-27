@@ -1,6 +1,7 @@
 package id.co.indivara.jdt12.university.controller;
 
 import id.co.indivara.jdt12.university.entity.RecordAchievement;
+import id.co.indivara.jdt12.university.exception.Message;
 import id.co.indivara.jdt12.university.service.RecordAchievementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,9 +31,9 @@ public class RecordAchievementController {
         return recordAchievementService.updateRecord(recordAchievement, idRecord);
     }
     @DeleteMapping("/delete/{idRecord}")
-    public String deleteRecord(@PathVariable ("idRecord") Integer idRecord){
+    public Message deleteRecord(@PathVariable ("idRecord") Integer idRecord){
         recordAchievementService.deleteRecordById(idRecord);
-        return "Delete Sukses...";
+        return new Message(200,"Record Achievement Berhasil Dihapus") ;
     }
 
 }
